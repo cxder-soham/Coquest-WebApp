@@ -15,11 +15,9 @@ import {
 	ProjectBasicInformation,
 	ProjectOperations,
 	Events,
-} from "./pages/Projects/Events";
+} from "./pages/Projects/Create";
 
-import {
-	NewProject1,
-} from "./pages/Projects/Build";
+
 
 
 /*
@@ -49,7 +47,7 @@ const router = createBrowserRouter([
 			</div>
 		),
 	},
-	/*
+	/*	
 	{
 		path: "/programs/create",
 		element: <CreateProgram />,
@@ -84,16 +82,6 @@ const router = createBrowserRouter([
 			{
 				path: "operations",
 				element: <ProjectOperations />,
-			},
-		],
-	},
-	{
-		path: "/projects/build",
-		element: <Events />,
-		children: [
-			{
-				path: "newproject1",
-				element: <NewProject1 />,
 			},
 		],
 	},
