@@ -15,6 +15,12 @@ import {
 	ProjectBasicInformation,
 	ProjectOperations,
 	Events,
+	H10,
+	H11,
+	H12,
+	H13,
+	H14,
+	H20,
 } from "./pages/Projects/Create";
 
 
@@ -82,6 +88,30 @@ const router = createBrowserRouter([
 			{
 				path: "operations",
 				element: <ProjectOperations />,
+			},
+			{
+				path: "H10",
+				element: <H10 />,
+			},
+			{
+				path: "H11",
+				element: <H11 />,
+			},
+			{
+				path: "H12",
+				element: <H12 />,
+			},
+			{
+				path: "H13",
+				element: <H13 />,
+			},
+			{
+				path: "H14",
+				element: <H14 />,
+			},
+			{
+				path: "H20",
+				element: <H20 />,
 			},
 		],
 	},

@@ -4,12 +4,37 @@ import { styled } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import { RadioGroupField } from "../../ProjectComponents/RadioGroupField";
 import HashtagSearch from "../../ProjectComponents/HashtagSearch";
-import SearchIcon from '@mui/icons-material/Search';
-import LocationSearch from "../../ProjectComponents/LocationSearch";
 
+type StyledTextFieldProps = {
+    label: string;
+    placeholder: string;
+};
 
+const StyledTextField = styled(TextField) <StyledTextFieldProps>`
+	&& {
+		margin-top: 28px;
+		.MuiInputLabel-shrink {
+			color: black;
+		}
+		& .placeholder-mod::placeholder {
+			color: #a1a1a1;
+		}
+	}
+`;
+const ContentView = styled("div")({
+    minWidth: 300,
+    width: "60vw",
+    maxWidth: 700,
+});
 
-const ProjectOperations = () => {
+const TitleField = styled(Typography)({
+    marginTop: 5,
+    fontWeight: 600,
+    fontSize: 24,
+    textAlign: "center",
+});
+
+const H11 = () => {
     const [categories, setCategories] = useState<string[]>([]); // State of all program types fetched
     const [hashtags, setHashtags] = useState<string[]>([]);
 
@@ -75,91 +100,53 @@ const ProjectOperations = () => {
         }
         setHashtags(tempHtags);
     }, []);
+
     return (
         <ContentView>
-            <TitleField>Operations</TitleField>
-            <TitleField>Time and Date</TitleField>
-            <LocationSearch></LocationSearch>
-            <FormControl variant="outlined" fullWidth style={{ marginTop: 31 }}>
-                <RadioGroupField
-                    label="Do you own the project space?"
-                    name="initiative-radio-btn-group"
-                    options={[
-                        { value: "yes", label: "Yes" },
-                        { value: "no", label: "No" },
-                    ]}
-                    onChange={handleInitiativeOrCharityChange}
-                />
+            <TitleField>Add Education</TitleField>
 
-
-                <RadioGroupField
-                    label="Have you booked the rental space?"
-                    name="participate-radio-btn-group"
-                    options={[
-                        { value: "yes", label: "Yes" },
-                        { value: "no", label: "No" },
-                    ]}
-                    onChange={handleParticipationChange}
-                />
-
-                <StyledTextField
-                    label="Additional Information"
-                    placeholder="Include details about space rentals, regulations, fees, or anything else about the location"
-                    className="placeholder-mod"
-                    value={description}
-                    onChange={handleDescriptionChange}
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    multiline
-                    rows={4}
-                />
-
-                <StyledTextField
-                    label="Responsibilities"
-                    placeholder="Provide a brief description of the position’s responsibilities. "
-                    className="placeholder-mod"
-                    value={objective}
-                    onChange={handleObjectiveChange}
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                    multiline
-                    rows={4}
-                />
-                <HashtagSearch hashtags={hashtags} />
-            </FormControl>
+            <StyledTextField
+                label="Higher Level Of Education"
+                fullWidth
+                placeholder="input"
+                value={projectName}
+                onChange={handleNameChange}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+            />
+            <StyledTextField
+                label="Institution"
+                fullWidth
+                placeholder="input"
+                value={projectName}
+                onChange={handleNameChange}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+            />
+            <StyledTextField
+                label="Program/Career Path"
+                fullWidth
+                placeholder="input"
+                value={projectName}
+                onChange={handleNameChange}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+            />
+            <StyledTextField
+                label="Degree"
+                fullWidth
+                placeholder="input"
+                value={projectName}
+                onChange={handleNameChange}
+                InputLabelProps={{
+                    shrink: true,
+                }}
+            />
         </ContentView>
     );
 };
-type StyledTextFieldProps = {
-    label: string;
-    placeholder: string;
-};
 
-const StyledTextField = styled(TextField) <StyledTextFieldProps>`
-	&& {
-		margin-top: 28px;
-		.MuiInputLabel-shrink {
-			color: black;
-		}
-		& .placeholder-mod::placeholder {
-			color: #a1a1a1;
-		}
-	}
-`;
-const ContentView = styled("div")({
-    minWidth: 300,
-    width: "60vw",
-    maxWidth: 700,
-});
-
-const TitleField = styled(Typography)({
-    marginTop: 5,
-    fontWeight: 600,
-    fontSize: 24,
-    textAlign: "center",
-});
-
-
-export default ProjectOperations;
+export default H11;

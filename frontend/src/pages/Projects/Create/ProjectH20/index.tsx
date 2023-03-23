@@ -34,7 +34,7 @@ const TitleField = styled(Typography)({
     textAlign: "center",
 });
 
-const ProjectPromote = () => {
+const H20 = () => {
     const [categories, setCategories] = useState<string[]>([]); // State of all program types fetched
     const [hashtags, setHashtags] = useState<string[]>([]);
 
@@ -108,7 +108,7 @@ const ProjectPromote = () => {
             <StyledTextField
                 label="Project name"
                 fullWidth
-                placeholder="Name your project"
+                placeholder="input"
                 value={projectName}
                 onChange={handleNameChange}
                 InputLabelProps={{
@@ -119,7 +119,7 @@ const ProjectPromote = () => {
             <FormControl variant="outlined" fullWidth style={{ marginTop: 31 }}>
                 <TextField
                     select
-                    label="Project Type"
+                    label="Type of Project"
                     style={{ color: "black" }}
                     className="placeholder-mod"
                     defaultValue=""
@@ -222,4 +222,4 @@ const ProjectPromote = () => {
     );
 };
 
-export default ProjectPromote;
+export default H20;
