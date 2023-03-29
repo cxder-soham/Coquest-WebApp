@@ -51,6 +51,7 @@ const getCurrPath = (fullpath: string) => {
     return fullpath.substring(17, fullpath.length);
 };
 
+
 const Events = () => {
     const location = useLocation();
     const [pageIndex, setPageIndex] = useState(0);

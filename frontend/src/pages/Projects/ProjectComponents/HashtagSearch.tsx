@@ -12,6 +12,8 @@ const SearchBarContainer = styled("div")({
     },
 });
 
+
+
 const SearchInputContainer = styled("div")({
     display: "flex",
     flexDirection: "row-reverse",

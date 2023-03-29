@@ -154,12 +154,14 @@ const ContentView = styled("div")({
     maxWidth: 700,
 });
 
+
 const TitleField = styled(Typography)({
     marginTop: 5,
     fontWeight: 600,
     fontSize: 24,
     textAlign: "center",
 });
+
 
 
 export default ProjectOperations;

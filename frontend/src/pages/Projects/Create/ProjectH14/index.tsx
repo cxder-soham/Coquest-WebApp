@@ -79,6 +79,7 @@ const H14 = () => {
         setInitiative(event.target.value);
     };
 
+
     // Handles setting the RADIO BUTTONs to its state
     const handleInitiativeOrCharityChange = (value: string) => {
         setinitiativeOrCharity(value);

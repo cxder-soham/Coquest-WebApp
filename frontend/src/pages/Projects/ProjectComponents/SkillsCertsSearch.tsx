@@ -127,6 +127,7 @@ const SkillsCertsSearch = (props: SkillSearchProps) => {
         );
     };
 
+
     return (
         <SearchBarContainer>
             <SearchInputContainer>

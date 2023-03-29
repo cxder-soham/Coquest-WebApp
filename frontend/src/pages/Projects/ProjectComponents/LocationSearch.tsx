@@ -40,6 +40,7 @@ const LocationSearch = () => {
         setSearchValue(event.target.value);
     };
 
+
     return (
         <SearchBarContainer>
             <StyledTextField
@@ -57,6 +58,7 @@ const LocationSearch = () => {
             />
         </SearchBarContainer>
     );
+
 };
 
 export default LocationSearch;
