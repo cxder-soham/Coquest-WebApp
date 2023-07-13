@@ -242,6 +242,7 @@ const UserProfileInternalView = () => {
         justifyContent: 'center',
     });
     let qr_api_url = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="
+    //link to the user profile 
     const link = "google.com"
     const QrCode = (() =>
         <><Dialog
