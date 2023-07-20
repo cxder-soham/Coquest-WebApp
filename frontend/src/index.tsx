@@ -54,10 +54,12 @@ const router = createBrowserRouter([
 	{
 		path: "/programs",
 		element: <Programs />,
+
 		children: [
 			{
 				path: "create",
 				element: <CreateProgram />,
+
 				children: [
 					{
 						path: "basic-information",
@@ -90,10 +92,6 @@ const router = createBrowserRouter([
 						element: <EditProfile />,
 					},
 				],
-			},
-			{
-				path: "view",
-				element: <ProgramView />,
 			},
 		],
 	},
