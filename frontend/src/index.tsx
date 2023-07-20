@@ -32,6 +32,7 @@ import {
 } from "./pages/Coop/CreateCoop";
 import { EditProfile } from "./pages/Programs/EditProfile";
 import { ProgramView } from "./pages/Programs/ProgramView";
+import Programs from "./pages/Programs/Programs";
 
 const root = ReactDOM.createRoot(
 	document.getElementById("root") as HTMLElement
@@ -52,11 +53,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/programs",
-		element: (
-			<>
-				<Outlet />
-			</>
-		),
+		element: <Programs />,
 		children: [
 			{
 				path: "create",
