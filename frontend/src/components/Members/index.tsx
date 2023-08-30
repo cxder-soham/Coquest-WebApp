@@ -84,7 +84,7 @@ const Members = ({ users, showAllLink, userRole }: MemberProps) => {
 					{users.map((user, index) => {
 						const userContent = userRole[index];
 						return (
-							<>
+							<React.Fragment key={index}>
 								<ListItem
 									style={{
 										marginBottom: "10px",
@@ -117,7 +117,7 @@ const Members = ({ users, showAllLink, userRole }: MemberProps) => {
 										color="#B8B8B8"
 									/>
 								) : null}
-							</>
+							</React.Fragment>
 						);
 					})}
 				</ListWrapper>

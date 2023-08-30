@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import TaskCard from "../../pages/Coop/CoopComponents/TaskCard";
+import { get } from "../../apiInterface";
+import APIReferenceComponent from "../../APIReferenceComponent";
 
 const Header = styled(Typography)({
 	fontWeight: 600,
@@ -29,95 +31,118 @@ const CustomGrid = styled(Grid)({
 	padding: 15,
 	paddingTop: 0,
 });
-const taskContents = [
+const tasks: TaskType[] = [
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 	{
 		taskName: "Task Name",
 		communityName: "Community name",
-		loction: "Location",
+		location: "Location",
 		description:
 			"Description. Lorem ipsum dolor sit amet consectetur. Nisl sollicitudin aliquam quam.",
 	},
 ];
 
+type TaskType = {
+	taskName: string | null;
+	communityName: string | null;
+	location: string | null;
+	description: string | null;
+};
+
 const CommunityTasks = () => {
+	const [taskContents, setTaskContents] = useState([]);
+
+	useEffect(() => {
+		try {
+			get("getTasks", ["name", "description"]).then(setTaskContents);
+		} catch (error) {
+			console.error("Error occured:", error);
+		}
+	}, []);
+
 	return (
 		<CommunityContainer>
 			<Header>All community tasks</Header>
 			<CustomGrid container spacing={1}>
-				{taskContents.map((item, index) => (
-					<Grid item key={index} lg={4}>
-						<TaskCard
-							name={item.taskName}
-							community={item.communityName}
-							location={item.loction}
-							description={item.description}
-							type="small"
-						/>
-					</Grid>
-				))}
+				{/* <APIReferenceComponent /> */}
+				{/* {taskContents &&
+					taskContents.map((data: any) => (
+						<div>{JSON.stringify(data)}</div>
+					))} */}
+				{tasks &&
+					tasks.map((item, index) => (
+						<Grid item key={index} lg={4}>
+							<TaskCard
+								name={item.taskName}
+								community={item.communityName}
+								location={item.location}
+								description={item.description}
+								type="small"
+							/>
+						</Grid>
+					))}
 			</CustomGrid>
 		</CommunityContainer>
 	);
