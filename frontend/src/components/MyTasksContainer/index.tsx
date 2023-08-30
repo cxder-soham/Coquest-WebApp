@@ -87,9 +87,10 @@ const MyTasksContainer = ({ label, seeAllLink }: MyTasksContainerProps) => {
 				</SeeAllLink>
 			</ContainerHeader>
 			<TasksListWrapper>
-				{taskContents.map((item) => {
+				{taskContents.map((item, index) => {
 					return (
 						<TaskCard
+							key={index}
 							name={item.taskName}
 							community={item.communityName}
 							location={item.location}
