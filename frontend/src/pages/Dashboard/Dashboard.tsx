@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
 import WelcomeMessage from "../../components/WelcomeMessage";
-import SearchBar from "../../components/SearchBar";
 import SimpleCard from "../../components/SimpleCard/SimpleCard";
 import styled from "@emotion/styled";
 import MyTasksContainer from "../../components/MyTasksContainer";
@@ -16,8 +15,6 @@ const Container = styled("div")({
 	marginBottom: 100,
 	justifyContent: "center",
 });
-
-// const SearchContainer = styled("div")({});
 
 const Header = styled("div")({
 	width: "90%",
@@ -89,9 +86,6 @@ function Dashboard() {
 					name="John Dory"
 					communityName="Community name"
 				/>
-				{/* <SearchContainer>
-					<SearchBar />
-				</SearchContainer> */}
 			</Header>
 			<DashColumns>
 				<DashColumn>

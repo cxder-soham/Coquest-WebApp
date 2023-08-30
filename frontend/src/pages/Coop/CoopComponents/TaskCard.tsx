@@ -8,10 +8,10 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import styled from "@emotion/styled";
 
 type TaskCardProps = CardProps & {
-	name: string;
-	community: string;
-	location: string;
-	description: string;
+	name: string | null;
+	community: string | null;
+	location: string | null;
+	description: string | null;
 	type: "small" | "large";
 };
 
