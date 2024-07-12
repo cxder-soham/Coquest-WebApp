@@ -1,3 +1,8 @@
+require('dotenv').config();
+const mongoose = require('mongoose');
+
+// Use the MONGODB_URI environment variable
+const uri = process.env.MONGODB_URI;
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 // TODO: find out how to reinclude this plugin
